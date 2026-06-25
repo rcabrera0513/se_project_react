@@ -1,0 +1,11 @@
+import sunny from "../../assets/sunny.svg";
+import "./WeatherCard.css";
+
+function WeatherCard() {
+  return <section className="weather-card">
+    <p className="weather-card__temperature">75 &deg;F</p>
+    <img src={sunny} alt="Sunny" className="weather-card__image" />
+  </section>;
+}
+
+export default WeatherCard;
