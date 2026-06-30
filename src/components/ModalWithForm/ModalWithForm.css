@@ -8,6 +8,11 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    visibility: hidden;
+}
+
+.modal_opened {
+    visibility: visible;
 }
 
 .modal__title {
@@ -49,7 +54,7 @@
 
 }
 
-..modal__label_type_radio input[type="radio"] {
+.modal__label_type_radio input[type="radio"] {
     appearance: none;
     -webkit-appearance: none;
     width: 16px;
