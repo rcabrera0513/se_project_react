@@ -9,10 +9,14 @@
     align-items: center;
     justify-content: center;
     visibility: hidden;
+    opacity: 0;
+    transition: visibility 0.3s ease, opacity 0.3s ease;
+    z-index: 999;
 }
 
-.modal_opened {
-    visibility: visible;
+.modal.modal_opened {
+    visibility: visible !important;
+    opacity: 1 !important;
 }
 
 .modal__title {
