@@ -9,9 +9,9 @@ import ItemModal from './ItemModal/ItemModal';
 import { getWeather, filterWeatherData } from '../utils/weatherApi';
 
 function App() {
-  const [weatherData, setWeatherData] = useState({ 
-    type: "hot", 
-    temp: { F: 999, C: 999 },  
+  const [weatherData, setWeatherData] = useState({
+    type: "hot",
+    temp: { F: 999 },
     city: "",
   });
   const [activeModal, setActiveModal] = useState("");
