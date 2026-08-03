@@ -10,7 +10,9 @@
   justify-content: center;
   visibility: hidden;
   opacity: 0;
-  transition: visibility 0.3s ease, opacity 0.3s ease;
+  transition:
+    visibility 0.3s ease,
+    opacity 0.3s ease;
   z-index: 1000;
 }
 
@@ -39,13 +41,12 @@
   height: 28px;
   padding: 0;
   border: none;
-  background: transparent;
-  color: #000;
-  font-size: 28px;
+  background-color: transparent;
   cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath fill='%23000' d='M9.414 8l3.536-3.536a1 1 0 1 0-1.414-1.414L8 6.586 4.464 3.05A1 1 0 0 0 3.05 4.464L6.586 8l-3.536 3.536a1 1 0 1 0 1.414 1.414L8 9.414l3.536 3.536a1 1 0 0 0 1.414-1.414L9.414 8z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 16px 16px;
 }
 
 .modal__close-button:hover {
@@ -68,7 +69,7 @@
 
 .modal__caption {
   margin: 0 0 4px 0;
-  font-family: 'Cabinet Grotesk', sans-serif;
+  font-family: "Cabinet Grotesk", sans-serif;
   font-weight: 700;
   font-size: 16px;
   line-height: 20px;
@@ -78,7 +79,7 @@
 .modal__weather {
   margin: 0;
   padding: 0;
-  font-family: 'Cabinet Grotesk', sans-serif;
+  font-family: "Cabinet Grotesk", sans-serif;
   font-weight: 400;
   font-size: 12px;
   line-height: 16px;

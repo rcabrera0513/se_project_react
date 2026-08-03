@@ -2,12 +2,21 @@ import "./WeatherCard.css";
 import { weatherOptions } from "../../utils/constants";
 
 function WeatherCard({ weatherData }) {
-  const normalizedCondition = ["clouds", "drizzle", "mist", "haze", "smoke"].includes(weatherData.condition)
+  const normalizedCondition = [
+    "clouds",
+    "drizzle",
+    "mist",
+    "haze",
+    "smoke",
+  ].includes(weatherData.condition)
     ? "clouds"
     : weatherData.condition;
 
   const filteredOptions = weatherOptions.filter((option) => {
-    return option.day === weatherData.isDay && option.condition === normalizedCondition;
+    return (
+      option.day === weatherData.isDay &&
+      option.condition === normalizedCondition
+    );
   });
 
   const weatherOptionUrl =
@@ -20,8 +29,12 @@ function WeatherCard({ weatherData }) {
 
   return (
     <section className="weather-card">
-      <p className="weather-card__temperature">{temperature} &deg; F</p>
-      <img src={weatherOptionUrl} alt="weather condition" className="weather-card__image" />
+      <p className="weather-card__temperature">{temperature}&deg;F</p>
+      <img
+        src={weatherOptionUrl}
+        alt={`${weatherData.condition} icon`}
+        className="weather-card__image"
+      />
     </section>
   );
 }
