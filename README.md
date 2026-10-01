@@ -1,43 +1,14 @@
-# WTWR
+# WTWR (What to Wear?)
 
-WTWR is a React + Vite weather styling app that suggests clothing based on current weather conditions. The app fetches real weather data, displays a weather card with temperature and icon, and shows a filtered list of garments to wear in hot, warm, or cold weather.
+## About the project
 
-## Features
+The idea of the application is pretty simple - we make a call to an API, which then responds with the daily weather forecast. We collect the weather data, process it, and then based on the forecast, we recommend suitable clothing to the user.
 
-- Fetches live weather data from OpenWeatherMap
-- Displays temperature, weather condition, and day/night icon
-- Filters and renders clothing suggestions based on weather type
-- Opens a preview modal for selected garments
-- Includes an add garment modal form for future extensibility
+## Links
 
-## Technologies
+- [Figma Design](https://www.figma.com/file/DTojSwldenF9UPKQZd6RRb/Sprint-10%3A-WTWR)
 
-- React
-- Vite
-- CSS modules/styles
-- Fetch API
-- OpenWeatherMap API
-
-## Getting Started
-
-```bash
-npm install
-npm run dev
-```
-
-Open the URL shown in the terminal to use the app locally.
-
-## Project Structure
-
-- `src/components/` - React UI components
-- `src/utils/` - helper functions and constants
-- `src/main.jsx` - app entry point
-
-## Notes
-
-- The app initializes clothing items in `App` state and passes them down to `Main`
-- The modal wrapper is reusable with `name` and `isOpen` props
-
-## Deployment
-
-This project can be deployed with Vercel, Netlify, or any static hosting provider that supports Vite apps.
+ ## Project Pitch Video
+ 
+ Check out [this video](https://drive.google.com/file/d/1UAlODfOF5hDOUgSBCTWT76jgMSZ1S6-h/view?usp=sharing), where I describe my 
+ project and some challenges I faced while building it.
