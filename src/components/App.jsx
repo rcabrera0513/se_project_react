@@ -1,18 +1,17 @@
-import { useEffect, useState } from 'react';
-import { Route, Routes } from 'react-router-dom';
+import { useEffect, useState } from "react";
+import { Route, Routes } from "react-router-dom";
 
-import './App.css'
-import { coordinates, APIkey, defaultClothingItems } from '../utils/constants';
-import Header from './Header/Header';
+import "./App.css";
+import { coordinates, apiKey, defaultClothingItems } from "../utils/constants";
+import Header from "./Header/Header";
 import Main from "../components/Main/Main";
-import Footer from './Footer/Footer';
-import AddItemModal from './AddItemModal';
-import ItemModal from './ItemModal/ItemModal';
-import Profile from './Profile/Profile';
-import { getWeather, filterWeatherData } from '../utils/weatherApi';
-import { getItems, addItem, removeItem } from '../utils/api';
-import CurrentTemperatureUnitContext from '../contexts/currentTemperatureUnitContext';
-
+import Footer from "./Footer/Footer";
+import AddItemModal from "./AddItemModal";
+import ItemModal from "./ItemModal/ItemModal";
+import Profile from "./Profile/Profile";
+import { getWeather, filterWeatherData } from "../utils/weatherApi";
+import { getItems, addItem, removeItem } from "../utils/api";
+import CurrentTemperatureUnitContext from "../contexts/currentTemperatureUnitContext";
 
 function App() {
   const [weatherData, setWeatherData] = useState({
@@ -50,11 +49,10 @@ function App() {
       createdAt: new Date().toISOString(),
     };
 
-    addItem(newItem)
-      .then((addedItem) => {
-        setClothingItems((currentItems) => [addedItem, ...currentItems]);
-      })
-      .catch(console.error);
+    return addItem(newItem).then((addedItem) => {
+      setClothingItems((currentItems) => [addedItem, ...currentItems]);
+      return addedItem;
+    });
   };
 
   const handleCloseModal = () => {
@@ -65,7 +63,7 @@ function App() {
     removeItem(itemId)
       .then(() => {
         setClothingItems((currentItems) =>
-          currentItems.filter((item) => item._id !== itemId)
+          currentItems.filter((item) => item._id !== itemId),
         );
         handleCloseModal();
       })
@@ -73,7 +71,7 @@ function App() {
   };
 
   useEffect(() => {
-    getWeather(coordinates, APIkey)
+    getWeather(coordinates, apiKey)
       .then((data) => {
         const filteredData = filterWeatherData(data);
         setWeatherData((currentWeatherData) => ({
@@ -118,6 +116,7 @@ function App() {
                 <Profile
                   clothingItems={clothingItems}
                   onCardClick={handleCardClick}
+                  handleAddClick={handleAddClick}
                 />
               }
             />

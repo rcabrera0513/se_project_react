@@ -4,7 +4,7 @@ import CurrentTemperatureUnitContext from "../../contexts/currentTemperatureUnit
 import { useContext } from "react";
 
 function WeatherCard({ weatherData }) {
-  const {currentTemperatureUnit} = useContext(CurrentTemperatureUnitContext);
+  const { currentTemperatureUnit } = useContext(CurrentTemperatureUnitContext);
   
   const normalizedCondition = ["clouds", "drizzle", "mist", "haze", "smoke"].includes(weatherData.condition)
     ? "clouds"
